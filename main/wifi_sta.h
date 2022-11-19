@@ -11,6 +11,6 @@
 /*
  * Initialize WiFi module in station mode.
  */
-void wifi_init_sta(void);
+void wifi_sta_init(void);
 
 #endif

@@ -14,9 +14,6 @@
 #include "esp_event.h"
 #include "esp_log.h"
 
-#include "lwip/err.h"
-#include "lwip/sys.h"
-
 #include "wifi_sta.h"
 
 #define EXAMPLE_ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
@@ -76,10 +73,8 @@ static void event_handler(void* arg, esp_event_base_t event_base,
     }
 }
 
-void wifi_init_sta(void)
-{
-    ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
-    
+void wifi_sta_init(void)
+{ 
     s_wifi_event_group = xEventGroupCreate();
 
     ESP_ERROR_CHECK(esp_netif_init());
